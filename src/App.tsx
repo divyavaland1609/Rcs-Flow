@@ -2,8 +2,12 @@ import React, { useCallback } from "react";
 import ReactFlow, {
   Background,
   BackgroundVariant,
+  Connection,
   Controls,
   Edge,
+  getConnectedEdges,
+  getIncomers,
+  getOutgoers,
   Node,
   ReactFlowProvider,
 } from "reactflow";
@@ -73,7 +77,7 @@ export default function App() {
 
   const onNodesDelete = useCallback(
     (deleted: CustomNode[]) => {
-      setEdges((eds) =>
+      setEdges((eds:any) =>
         deleted.reduce((acc: Edge[], node) => {
           const incomers = getIncomers(node, nodes, eds);
           const outgoers = getOutgoers(node, nodes, eds);
@@ -119,7 +123,6 @@ export default function App() {
           <ReactFlow
             nodes={nodes}
             edges={edges}
-            
             onNodesChange={onNodesChange}
             onNodesDelete={onNodesDelete}
             onEdgesChange={onEdgesChange}
@@ -137,8 +140,7 @@ export default function App() {
             fitViewOptions={{ maxZoom: 1 }}
             onInit={setReactFlowInstance}
             snapToGrid={true}
-            nodeTypes={nodesConfig.nodeTypes}
-          >
+            nodeTypes={nodesConfig.nodeTypes}>
             <Controls />
             {/* <DownloadButton /> */}
             <Background variant={BackgroundVariant.Dots} gap={12} size={1} />

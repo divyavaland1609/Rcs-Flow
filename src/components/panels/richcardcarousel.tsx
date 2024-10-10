@@ -183,7 +183,7 @@ export const richcardcarousel = ({ isEdit, data }: RichCardProps) => {
   };
 
 
-  
+
   useEffect(() => {
     if (selectedNode) {
       const selectedCarousel = selectedNode.data?.richCardCarousels?.[cardIndex];
@@ -290,8 +290,7 @@ export const richcardcarousel = ({ isEdit, data }: RichCardProps) => {
       });
     }
   };
-  
-  
+
   // const handleDescriptionChange = (value: string) => {
   //   setDescription(value);
   //   setRichCardCarousels((prev) => {

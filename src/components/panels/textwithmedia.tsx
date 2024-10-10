@@ -28,8 +28,7 @@ export const TextWithMedia = ({ isEdit, data }: RichCardProps) => {
   );
   const [templateName, setTemplateName] = useState<string>("");
   const [media, setMedia] = useState<string | null>(null);
-  const [mediaModal, setMediaModal] = useState(false);
-
+  const [setMediaModal] = useState(false);
   const [title, setTitle] = useState<string>("");
 
   useEffect(() => {

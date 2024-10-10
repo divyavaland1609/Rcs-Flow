@@ -12,7 +12,6 @@ export function handleDragOver(event: React.DragEvent<HTMLDivElement>) {
 	event.preventDefault()
 	event.dataTransfer.dropEffect = 'move'
 }
-
 export function handleOnDrop(
 	event: React.DragEvent<HTMLDivElement>,
 	reactFlowWrapper: any,
@@ -23,12 +22,9 @@ export function handleOnDrop(
 	if (reactFlowWrapper) {
 		const reactFlowBounds = reactFlowWrapper.current.getBoundingClientRect()
 		const type = event.dataTransfer.getData('application/reactflow')
-
-		// check if the dropped element is valid
 		if (typeof type === 'undefined' || !type) {
 			return
 		}
-
 		const position = reactFlowInstance.project({
 			x: event.clientX - reactFlowBounds.left,
 			y: event.clientY - reactFlowBounds.top,
@@ -39,7 +35,5 @@ export function handleOnDrop(
 			position,
 			data: { label: `${type} ` },
 		}
-
-		setNodes(newNode)
-	}
+	setNodes(newNode)}
 }

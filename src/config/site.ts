@@ -1,6 +1,9 @@
 import { TextNode } from "@/components/nodes";
 import { Edge, Node } from "reactflow";
 
+
+
+
 export const nodesConfig = {
   initialNodes: [
     {
@@ -15,15 +18,6 @@ export const nodesConfig = {
       },
       position: { x: 300, y: 400 },
     },
-    //  {
-    //   id: "2",
-    //   type: "textNode",
-    //   data: {
-    //     label: "This is the right-side node",
-    //     isInitial: false, // Not an initial node
-    //   },
-    //   position: { x: 500, y: 400 },
-    // },
   ] as Node[],
   initialEdges: [{ id: "e1-1", source: "1", target: "2" }] as Edge[],
   nodeTypes: {

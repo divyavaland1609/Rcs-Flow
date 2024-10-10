@@ -425,11 +425,9 @@ export const TextNode = memo((node: Node) => {
                         </div>
                         <Typography.Text strong>{card.title}</Typography.Text>
                         <br />
-                        {/* <Typography.Text>{card.description}</Typography.Text> */}
-
                         <Typography.Text
                           style={{
-                            whiteSpace: "pre-wrap", // Preserve white space and line breaks
+                            whiteSpace: "pre-wrap",
                           }}
                         >
                           {card.description
@@ -442,7 +440,7 @@ export const TextNode = memo((node: Node) => {
                                   </span>
                                 ))
                             : "No description available."}{" "}
-                          {/* Fallback text if description is undefined */}
+    
                         </Typography.Text>
 
                         <div className="text-xs whitespace-pre-wrap">
@@ -647,7 +645,9 @@ export const TextNode = memo((node: Node) => {
         </Popconfirm>
       </Menu.Item>
       {startNodeId === node.id ? (
-        <Menu.Item key="unsetStartNode">
+        <Menu.Item key="unsetStartNode"
+        onClick={()=>setStartNode(null)}
+        >
           <span>Unset start node</span>
         </Menu.Item>
       ) : (
