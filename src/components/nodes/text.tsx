@@ -440,9 +440,7 @@ export const TextNode = memo((node: Node) => {
                                   </span>
                                 ))
                             : "No description available."}{" "}
-    
                         </Typography.Text>
-
                         <div className="text-xs whitespace-pre-wrap">
                           {Array.isArray(card.buttons) &&
                           card.buttons.length > 0
